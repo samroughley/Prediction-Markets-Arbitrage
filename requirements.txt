@@ -1,0 +1,5 @@
+plotly
+matplotlib.pyplot
+streamlit
+streamlit_autorefresh
+watchdog
