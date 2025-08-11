@@ -1,5 +1,8 @@
 # Ignore the virtual environment
 venv
 
-# Ignore the test file
-test_streamlit_dashboard.py
+# Ignore test files
+testing_scripts/
+
+# Ignore the constants file
+constants.py

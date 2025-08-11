@@ -1,5 +1,6 @@
 plotly
-matplotlib.pyplot
+matplotlib
 streamlit
 streamlit_autorefresh
 watchdog
+py-clob-client
