@@ -1,6 +1,9 @@
 # Ignore the virtual environment
 venv
 
+# Ignore pycache
+__pycache__/
+
 # Ignore test files
 testing_scripts/
 

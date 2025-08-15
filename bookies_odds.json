@@ -1,0 +1,259 @@
+[
+    {
+        "home_team": {
+            "team_name": "Liverpool",
+            "best_odds": 1.32,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "away_team": {
+            "team_name": "Bournemouth",
+            "best_odds": 10.0,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "draw": {
+            "best_odds": 6.6,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        }
+    },
+    {
+        "home_team": {
+            "team_name": "Aston Villa",
+            "best_odds": 2.38,
+            "bookies_providing": [
+                "matchbook"
+            ]
+        },
+        "away_team": {
+            "team_name": "Newcastle United",
+            "best_odds": 3.2,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "draw": {
+            "best_odds": 3.75,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        }
+    },
+    {
+        "home_team": {
+            "team_name": "Brighton and Hove Albion",
+            "best_odds": 1.98,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "away_team": {
+            "team_name": "Fulham",
+            "best_odds": 4.2,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "draw": {
+            "best_odds": 3.85,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        }
+    },
+    {
+        "home_team": {
+            "team_name": "Tottenham Hotspur",
+            "best_odds": 1.42,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "away_team": {
+            "team_name": "Burnley",
+            "best_odds": 9.8,
+            "bookies_providing": [
+                "smarkets",
+                "matchbook"
+            ]
+        },
+        "draw": {
+            "best_odds": 5.1,
+            "bookies_providing": [
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        }
+    },
+    {
+        "home_team": {
+            "team_name": "Sunderland",
+            "best_odds": 3.45,
+            "bookies_providing": [
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "away_team": {
+            "team_name": "West Ham United",
+            "best_odds": 2.32,
+            "bookies_providing": [
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "draw": {
+            "best_odds": 3.55,
+            "bookies_providing": [
+                "betfair_ex_uk"
+            ]
+        }
+    },
+    {
+        "home_team": {
+            "team_name": "Wolverhampton Wanderers",
+            "best_odds": 7.6,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "away_team": {
+            "team_name": "Manchester City",
+            "best_odds": 1.48,
+            "bookies_providing": [
+                "betway"
+            ]
+        },
+        "draw": {
+            "best_odds": 5.1,
+            "bookies_providing": [
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        }
+    },
+    {
+        "home_team": {
+            "team_name": "Nottingham Forest",
+            "best_odds": 2.2,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "away_team": {
+            "team_name": "Brentford",
+            "best_odds": 3.7,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "draw": {
+            "best_odds": 3.5,
+            "bookies_providing": [
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        }
+    },
+    {
+        "home_team": {
+            "team_name": "Chelsea",
+            "best_odds": 1.67,
+            "bookies_providing": [
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "away_team": {
+            "team_name": "Crystal Palace",
+            "best_odds": 5.4,
+            "bookies_providing": [
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        },
+        "draw": {
+            "best_odds": 4.5,
+            "bookies_providing": [
+                "betfair_ex_uk",
+                "matchbook"
+            ]
+        }
+    },
+    {
+        "home_team": {
+            "team_name": "Manchester United",
+            "best_odds": 4.3,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk"
+            ]
+        },
+        "away_team": {
+            "team_name": "Arsenal",
+            "best_odds": 1.91,
+            "bookies_providing": [
+                "sport888",
+                "williamhill",
+                "betfair_ex_uk"
+            ]
+        },
+        "draw": {
+            "best_odds": 3.95,
+            "bookies_providing": [
+                "betfair_ex_uk"
+            ]
+        }
+    },
+    {
+        "home_team": {
+            "team_name": "Leeds United",
+            "best_odds": 2.42,
+            "bookies_providing": [
+                "betfair_ex_uk"
+            ]
+        },
+        "away_team": {
+            "team_name": "Everton",
+            "best_odds": 3.25,
+            "bookies_providing": [
+                "betfair_ex_uk"
+            ]
+        },
+        "draw": {
+            "best_odds": 3.45,
+            "bookies_providing": [
+                "smarkets",
+                "betfair_ex_uk"
+            ]
+        }
+    }
+]
