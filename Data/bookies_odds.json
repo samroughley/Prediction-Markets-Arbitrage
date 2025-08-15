@@ -4,7 +4,6 @@
             "team_name": "Liverpool",
             "best_odds": 1.32,
             "bookies_providing": [
-                "smarkets",
                 "betfair_ex_uk",
                 "matchbook"
             ]
@@ -47,7 +46,6 @@
         "draw": {
             "best_odds": 3.75,
             "bookies_providing": [
-                "smarkets",
                 "betfair_ex_uk",
                 "matchbook"
             ]
@@ -120,6 +118,7 @@
             "team_name": "West Ham United",
             "best_odds": 2.32,
             "bookies_providing": [
+                "smarkets",
                 "betfair_ex_uk",
                 "matchbook"
             ]
@@ -170,7 +169,6 @@
             "team_name": "Brentford",
             "best_odds": 3.7,
             "bookies_providing": [
-                "smarkets",
                 "betfair_ex_uk",
                 "matchbook"
             ]

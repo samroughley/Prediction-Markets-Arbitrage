@@ -16,6 +16,6 @@ from bookie_functions import update_odds
 update_bookie_odds = False
 
 if update_bookie_odds:
-    update_odds()
+    update_odds(save_fpath="Data/bookies_odds.json")
 
 

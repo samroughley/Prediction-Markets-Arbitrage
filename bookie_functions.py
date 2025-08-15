@@ -108,7 +108,7 @@ def process_odds(full_odds_json):
     return full_results
 
 
-def update_odds():
+def update_odds(save_fpath):
     """
     Performs all the necessary functions to obtain the processed odds.
     """
@@ -121,5 +121,5 @@ def update_odds():
         processed_odds = process_odds(full_odds_json)
 
         # Save the results
-        with open("bookies_odds.json", "w") as f:
+        with open(save_fpath, "w") as f:
             json.dump(processed_odds, f, indent=4)
