@@ -8,7 +8,8 @@ Controls all the necessary backend functions, including:
 # Import necessary packages
 import json
 
-from bookie_functions import update_odds
+from bookie_functions import update_odds, request_odds_api
+from analysis import check_for_arbitrage
 
 
 
@@ -18,4 +19,4 @@ update_bookie_odds = False
 if update_bookie_odds:
     update_odds(save_fpath="Data/bookies_odds.json")
 
-
+check_for_arbitrage(bookies_odds_fpath="Data/bookies_odds.json")

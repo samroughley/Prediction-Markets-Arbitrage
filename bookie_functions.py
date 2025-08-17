@@ -47,6 +47,10 @@ def request_odds_api():
         print('Remaining requests', odds_response.headers['x-requests-remaining'])
         print('Used requests', odds_response.headers['x-requests-used'])
 
+        # Save all the odds
+        with open("Data/full_bookies_odds.json","w") as f:
+            json.dump(odds_json, f, indent=4)
+
         # Return the repsonse
         return odds_json, True
 
