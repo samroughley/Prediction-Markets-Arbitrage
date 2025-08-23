@@ -36,12 +36,6 @@ else:
 
 # Format the sidebar
 with st.sidebar:
-    st.markdown("""
-               This page contains a detailed breakdown of all the odds provided by
-               bookmakers provided by the API service. The odds are shown
-               separately for each match. The best available odds for each match 
-               outcome are highlighted in green.
-               """)
     st.markdown("`Created by:`")
     linkedin_url = "https://www.linkedin.com/in/samroughley/"
     st.markdown(f'<a href="{linkedin_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Sam Roughley`</a>', unsafe_allow_html=True)
@@ -50,6 +44,9 @@ with st.sidebar:
         st.markdown(f'<a href="{github_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/github.png" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Sam Roughley`</a>', unsafe_allow_html=True)
     else:
         st.markdown(f'<a href="{github_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Sam Roughley`</a>', unsafe_allow_html=True)
+
+    # Specify when the site was last updated
+    st.markdown(f"*Last updated: {time.strftime('%H:%M:%S')}*")
 
 
 # Load the data

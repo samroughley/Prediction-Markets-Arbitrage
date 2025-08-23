@@ -56,6 +56,9 @@ with st.sidebar:
     else:
         st.markdown(f'<a href="{github_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Sam Roughley`</a>', unsafe_allow_html=True)
 
+    # Specify when the site was last updated
+    st.write(f"*Last updated: {time.strftime('%H:%M:%S')}*")
+
 # Set the page title
 st.title("Arbitrage Tracker")
 
@@ -73,8 +76,7 @@ st.markdown("""
 
 include_polymarket_data = st.checkbox(label="Include Polymarket data (to be incorporated)", value=False)
 
-# Specify when the dashboard was last updated
-st.write(f"Last updated: {time.strftime('%H:%M:%S')}")
+
 
 # Include the dataframe
 st.dataframe(pd.DataFrame(loaded_data), hide_index=True)

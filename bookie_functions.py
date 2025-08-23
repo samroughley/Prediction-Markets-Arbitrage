@@ -106,6 +106,9 @@ def process_odds(full_odds_json):
                     "away_team": away_team_dict,
                     "draw": best_odds_dict["Draw"]}
         
+        # Add the date of the match
+        full_dict["commence_date"] = match["commence_time"][:10]
+        
         # Add to the full set of results
         full_results.append(full_dict)
     
