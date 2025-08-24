@@ -26,6 +26,10 @@ st.set_page_config(
 # Load the data
 with open("Data/analysed_odds.json", "r") as f:
     loaded_data = json.load(f)
+with open("Data/analysed_odds_with_polymarket.json", "r") as f:
+    loaded_data_with_polymarket = json.load(f)
+with open("Data/update_times.json","r") as f:
+    update_times = json.load(f)
 
 # Refresh every 5 seconds
 st_autorefresh(interval=5000, key='dashboard_refresh')
@@ -57,7 +61,9 @@ with st.sidebar:
         st.markdown(f'<a href="{github_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Sam Roughley`</a>', unsafe_allow_html=True)
 
     # Specify when the site was last updated
-    st.write(f"*Last updated: {time.strftime('%H:%M:%S')}*")
+    st.write(f"""*Site last updated: {time.strftime('%H:%M:%S')}*    
+             *Polymarket last update: {update_times['Polymarket']}*    
+             *Bookmakers last update: {update_times['Bookmakers']}*""")
 
 # Set the page title
 st.title("Arbitrage Tracker")
@@ -74,12 +80,15 @@ st.markdown("""
             - The guaranteed returns that can be achieved.
             """)
 
-include_polymarket_data = st.checkbox(label="Include Polymarket data (to be incorporated)", value=False)
+include_polymarket_data = st.checkbox(label="Include Polymarket data", value=False)
 
 
 
 # Include the dataframe
-st.dataframe(pd.DataFrame(loaded_data), hide_index=True)
+if include_polymarket_data:
+    st.dataframe(pd.DataFrame(loaded_data_with_polymarket), hide_index=True)
+else:
+    st.dataframe(pd.DataFrame(loaded_data), hide_index=True)
 
 # Provide descriptions of the columns
 with st.expander("ℹ️ Column details"):
@@ -93,6 +102,14 @@ with st.expander("ℹ️ Column details"):
     - **Return:** Maximum guaranteed percentage return from arbitrage.  
     - **Annualised Return:** Annualised return, assuming equal opportunities once a week, 52 weeks a year.
     """)
+
+
+# Include table for two-bet arbitrage
+st.markdown("### Two-Bet Arbitrage")
+st.markdown("""Polymarket, along with other prediction markets, enables bets
+            to be placed on an event not happening. This enables potential
+            arbitrage opportunities that involve only two bets. Such
+            opportunities are monitored below.""")
 
 # Provide a disclaimer about update frequency
 st.markdown("""*Note: Due to rate limits, the bookmakers' odds are not continually updated.

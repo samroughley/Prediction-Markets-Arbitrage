@@ -5,14 +5,16 @@
             "best_odds": 4.2,
             "bookies_providing": [
                 "betfair_ex_uk"
-            ]
+            ],
+            "converse_outcome_odds": 1.282051282051282
         },
         "away_team": {
             "team_name": "Manchester United",
             "best_odds": 2.15,
             "bookies_providing": [
                 "skybet"
-            ]
+            ],
+            "converse_outcome_odds": 1.8867924528301885
         },
         "draw": {
             "best_odds": 3.4,
@@ -21,7 +23,8 @@
                 "skybet",
                 "betfair_ex_uk",
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.36986301369863
         },
         "commence_date": "2025-08-24"
     },
@@ -32,7 +35,8 @@
             "bookies_providing": [
                 "betfair_ex_uk",
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.36986301369863
         },
         "away_team": {
             "team_name": "Liverpool",
@@ -40,15 +44,18 @@
             "bookies_providing": [
                 "betfair_ex_uk",
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.923076923076923
         },
         "draw": {
             "best_odds": 4.0,
             "bookies_providing": [
                 "smarkets",
                 "betfair_ex_uk",
-                "matchbook"
-            ]
+                "matchbook",
+                "polymarket"
+            ],
+            "converse_outcome_odds": 1.2987012987012987
         },
         "commence_date": "2025-08-25"
     },
@@ -58,20 +65,23 @@
             "best_odds": 1.57,
             "bookies_providing": [
                 "coral"
-            ]
+            ],
+            "converse_outcome_odds": 2.6315789473684212
         },
         "away_team": {
             "team_name": "Fulham",
             "best_odds": 6.8,
             "bookies_providing": [
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.1764705882352942
         },
         "draw": {
             "best_odds": 4.6,
             "bookies_providing": [
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.282051282051282
         },
         "commence_date": "2025-08-30"
     },
@@ -81,7 +91,8 @@
             "best_odds": 1.85,
             "bookies_providing": [
                 "skybet"
-            ]
+            ],
+            "converse_outcome_odds": 2.3255813953488373
         },
         "away_team": {
             "team_name": "Bournemouth",
@@ -89,14 +100,16 @@
             "bookies_providing": [
                 "betfair_ex_uk",
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.2345679012345678
         },
         "draw": {
             "best_odds": 4.4,
             "bookies_providing": [
                 "betfair_ex_uk",
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.25
         },
         "commence_date": "2025-08-30"
     },
@@ -106,20 +119,23 @@
             "best_odds": 2.9,
             "bookies_providing": [
                 "betfair_ex_uk"
-            ]
+            ],
+            "converse_outcome_odds": 1.5625
         },
         "away_team": {
             "team_name": "Brentford",
             "best_odds": 2.78,
             "bookies_providing": [
                 "smarkets"
-            ]
+            ],
+            "converse_outcome_odds": 1.5384615384615383
         },
         "draw": {
             "best_odds": 3.5,
             "bookies_providing": [
                 "boylesports"
-            ]
+            ],
+            "converse_outcome_odds": 1.3513513513513513
         },
         "commence_date": "2025-08-30"
     },
@@ -130,22 +146,21 @@
             "bookies_providing": [
                 "skybet",
                 "coral"
-            ]
+            ],
+            "converse_outcome_odds": 3.571428571428571
         },
         "away_team": {
             "team_name": "Burnley",
             "best_odds": 11.5,
             "bookies_providing": [
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.0989010989010988
         },
         "draw": {
-            "best_odds": 5.6,
-            "bookies_providing": [
-                "smarkets",
-                "betfair_ex_uk",
-                "matchbook"
-            ]
+            "best_odds": 5.88235294117647,
+            "bookies_providing": "polymarket",
+            "converse_outcome_odds": 1.1904761904761905
         },
         "commence_date": "2025-08-30"
     },
@@ -155,14 +170,16 @@
             "best_odds": 2.6,
             "bookies_providing": [
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.5873015873015872
         },
         "away_team": {
             "team_name": "Everton",
             "best_odds": 3.05,
             "bookies_providing": [
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.4285714285714286
         },
         "draw": {
             "best_odds": 3.3,
@@ -174,7 +191,8 @@
                 "coral",
                 "ladbrokes_uk",
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.4084507042253522
         },
         "commence_date": "2025-08-30"
     },
@@ -184,7 +202,8 @@
             "best_odds": 4.0,
             "bookies_providing": [
                 "smarkets"
-            ]
+            ],
+            "converse_outcome_odds": 1.3513513513513513
         },
         "away_team": {
             "team_name": "Newcastle United",
@@ -197,14 +216,16 @@
                 "williamhill",
                 "coral",
                 "ladbrokes_uk"
-            ]
+            ],
+            "converse_outcome_odds": 1.923076923076923
         },
         "draw": {
             "best_odds": 3.85,
             "bookies_providing": [
                 "betfair_ex_uk",
                 "matchbook"
-            ]
+            ],
+            "converse_outcome_odds": 1.2987012987012987
         },
         "commence_date": "2025-08-30"
     },
@@ -215,22 +236,26 @@
             "bookies_providing": [
                 "smarkets",
                 "betfair_ex_uk"
-            ]
+            ],
+            "converse_outcome_odds": 1.25
         },
         "away_team": {
             "team_name": "Manchester City",
             "best_odds": 1.89,
             "bookies_providing": [
                 "betfair_ex_uk"
-            ]
+            ],
+            "converse_outcome_odds": 2.127659574468085
         },
         "draw": {
             "best_odds": 4.0,
             "bookies_providing": [
                 "skybet",
                 "betfair_ex_uk",
-                "betvictor"
-            ]
+                "betvictor",
+                "polymarket"
+            ],
+            "converse_outcome_odds": 1.282051282051282
         },
         "commence_date": "2025-08-31"
     },
@@ -240,23 +265,21 @@
             "best_odds": 1.85,
             "bookies_providing": [
                 "skybet"
-            ]
+            ],
+            "converse_outcome_odds": 2.380952380952381
         },
         "away_team": {
             "team_name": "West Ham United",
             "best_odds": 5.2,
             "bookies_providing": [
                 "betfair_ex_uk"
-            ]
+            ],
+            "converse_outcome_odds": 1.2195121951219512
         },
         "draw": {
-            "best_odds": 3.8,
-            "bookies_providing": [
-                "betfair_ex_uk",
-                "casumo",
-                "unibet_uk",
-                "grosvenor"
-            ]
+            "best_odds": 4.0,
+            "bookies_providing": "polymarket",
+            "converse_outcome_odds": 1.282051282051282
         },
         "commence_date": "2025-08-31"
     },
@@ -266,20 +289,21 @@
             "best_odds": 2.08,
             "bookies_providing": [
                 "betfair_ex_uk"
-            ]
+            ],
+            "converse_outcome_odds": 1.8867924528301885
         },
         "away_team": {
             "team_name": "Arsenal",
             "best_odds": 3.9,
             "bookies_providing": [
                 "betfair_ex_uk"
-            ]
+            ],
+            "converse_outcome_odds": 1.3157894736842106
         },
         "draw": {
-            "best_odds": 3.7,
-            "bookies_providing": [
-                "betfair_ex_uk"
-            ]
+            "best_odds": 3.7037037037037033,
+            "bookies_providing": "polymarket",
+            "converse_outcome_odds": 1.3157894736842106
         },
         "commence_date": "2025-08-31"
     },
@@ -289,21 +313,21 @@
             "best_odds": 1.95,
             "bookies_providing": [
                 "skybet"
-            ]
+            ],
+            "converse_outcome_odds": 2.0833333333333335
         },
         "away_team": {
             "team_name": "Crystal Palace",
             "best_odds": 4.5,
             "bookies_providing": [
                 "betfair_ex_uk"
-            ]
+            ],
+            "converse_outcome_odds": 1.282051282051282
         },
         "draw": {
-            "best_odds": 3.6,
-            "bookies_providing": [
-                "boylesports",
-                "coral"
-            ]
+            "best_odds": 3.846153846153846,
+            "bookies_providing": "polymarket",
+            "converse_outcome_odds": 1.3157894736842106
         },
         "commence_date": "2025-08-31"
     },

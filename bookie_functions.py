@@ -8,6 +8,7 @@ preprocess the odds.
 import requests
 import json
 from constants import ODDS_API_KEY
+import time
 
 
 
@@ -22,6 +23,16 @@ def request_odds_api():
     markets = 'h2h'         # Only pull h2h market info
     odds_format = 'decimal'
     date_format = 'iso'
+
+    # Record time of API request
+    try:
+        with open("Data/update_times.json","r") as f:
+            update_times = json.load(f)
+    except:
+        update_times = {}
+    update_times["Bookmakers"] = time.strftime('%H:%M:%S')
+    with open("Data/update_times.json","w") as f:
+        json.dump(update_times, f, indent=4)
 
     # Request the api
     odds_response = requests.get(

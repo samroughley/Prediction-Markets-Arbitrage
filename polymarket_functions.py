@@ -9,6 +9,7 @@ from py_clob_client.client import ClobClient
 from constants import POLYMARKET_API_KEY
 import json
 import re
+import time
 
 
 def fetch_all_markets():
@@ -87,7 +88,10 @@ def get_order_book_info(market_cond_id):
     client.set_api_creds(client.create_or_derive_api_creds())
 
     # Get the data from the API
-    resp = client.get_market(condition_id=market_cond_id)
+    try:
+        resp = client.get_market(condition_id=market_cond_id)
+    except:
+        print("Market not found when finding order book")
 
     # Extract the wanted info
     market_info = {
@@ -99,19 +103,40 @@ def get_order_book_info(market_cond_id):
     }
 
     # Get the order book info
-    yes_order_book = client.get_order_book(token_id=market_info["Yes token ID"])
-    no_order_book = client.get_order_book(token_id=market_info["No token ID"])
+    try:
+        yes_order_book = client.get_order_book(token_id=market_info["Yes token ID"])
+        no_order_book = client.get_order_book(token_id=market_info["No token ID"])
+        market_info = market_info | {"Order Book": True}
+    except:
+        # Order book doesn't exist
+        print("Order book not found")
+        return market_info | {"Order Book": False}
 
     # Add on order book info
-    print(yes_order_book)
-    market_info["Yes Best Bid"] = yes_order_book.bids[-1].price
-    market_info["Yes Best Bid Volume"] = yes_order_book.bids[-1].size
-    market_info["Yes Best Ask"] = yes_order_book.asks[-1].price
-    market_info["Yes Best Ask Volume"] = yes_order_book.asks[-1].size
-    market_info["No Best Bid"] = no_order_book.bids[-1].price
-    market_info["No Best Bid Volume"] = no_order_book.bids[-1].size
-    market_info["No Best Ask"] = no_order_book.asks[-1].price
-    market_info["No Best Ask Volume"] = no_order_book.asks[-1].size
+    if len(yes_order_book.bids) == 0:
+        market_info["Yes Best Bid"] = "N/A"
+        market_info["Yes Best Bid Volume"] = "N/A"
+    else:
+        market_info["Yes Best Bid"] = yes_order_book.bids[-1].price
+        market_info["Yes Best Bid Volume"] = yes_order_book.bids[-1].size
+    if len(yes_order_book.asks) == 0:
+        market_info["Yes Best Ask"] = "N/A"
+        market_info["Yes Best Ask Volume"] = "N/A"
+    else:
+        market_info["Yes Best Ask"] = yes_order_book.asks[-1].price
+        market_info["Yes Best Ask Volume"] = yes_order_book.asks[-1].size
+    if len(no_order_book.bids) == 0:
+        market_info["No Best Bid"] = "N/A"
+        market_info["No Best Bid Volume"] = "N/A"
+    else:
+        market_info["No Best Bid"] = no_order_book.bids[-1].price
+        market_info["No Best Bid Volume"] = no_order_book.bids[-1].size
+    if len(no_order_book.asks) == 0:
+        market_info["No Best Ask"] = "N/A"
+        market_info["No Best Ask Volume"] = "N/A"
+    else:
+        market_info["No Best Ask"] = no_order_book.asks[-1].price
+        market_info["No Best Ask Volume"] = no_order_book.asks[-1].size
 
     return market_info
 
@@ -126,29 +151,33 @@ def team_abr(team_name):
 
     # Go through every possible team
     if team_name == "aston villa":
-        #return "avl"
+        # return "avl"
         return "ast"
     elif team_name == "brighton and hove albion":
-        return "bha"
+        # return "bha"
+        return "bri"
     elif team_name == "burnley":
-        return "brn"
+        # return "brn"
+        return "bur"
     elif team_name == "manchester city":
-        #return "mci"
+        # return "mci"
         return "mac"
     elif team_name == "manchester united":
-        return "mnu"
+        # return "mnu"
+        return "mun"
     elif team_name == "nottingham forest":
-        return "nfo"
+        # return "nfo"
+        return "not"
     elif team_name == "west ham united":
         return "wes"
-        #return "whu"
+        # return "whu"
     else:
         # Abbreviation is first three letters
         return "".join(list(team_name)[:3])
 
 
 
-def introduce_polymarket_odds(bookies_odds_fpath):
+def introduce_polymarket_odds(bookies_odds_fpath, updated_file_fpath):
     """
     Takes in the currently saved bookmakers odds, and introduces the
     odds available on Polymarket. Saves the resulting odds in a separate
@@ -160,10 +189,24 @@ def introduce_polymarket_odds(bookies_odds_fpath):
         bookmakers_odds = json.load(f)
 
     # Get all the currently available Polymarket markets
-    markets_list = fetch_all_markets()
+    # markets_list = fetch_all_markets()
+        
+    # Save it for now
+    import pickle
+    # with open("testing_scripts/markets_list.pkl","wb") as f:
+    #     pickle.dump(markets_list, f)
+    with open("testing_scripts/markets_list.pkl", "rb") as f:
+        markets_list = pickle.load(f)
+        print()
+        print("Currently using archived markets list!!")
+        print()
+
+    # Initialise a record of all Polymarket odds
+    polymarket_odds = []
+
 
     # Go through each match
-    for match in bookmakers_odds:
+    for i, match in enumerate(bookmakers_odds):
 
         # Get the team abbreviations
         home_team_abr = team_abr(match["home_team"]["team_name"])
@@ -177,8 +220,11 @@ def introduce_polymarket_odds(bookies_odds_fpath):
         draw_market_slug = f"epl-{home_team_abr}-{away_team_abr}-{match_date}-draw"
         away_win_market_slug = f"epl-{home_team_abr}-{away_team_abr}-{match_date}-{away_team_abr}"
 
+        # Initialise dict
+        polymarket_match_odds = {}
+
         # Go through the three markets
-        for market_slug in [home_win_market_slug,draw_market_slug,away_win_market_slug]:
+        for outcome, market_slug in zip(["home_team","draw","away_team"],[home_win_market_slug,draw_market_slug,away_win_market_slug]):
 
             # Get the market condition id
             cond_id = next((item["condition_id"] for item in markets_list if item["market_slug"]==market_slug), None)
@@ -186,17 +232,64 @@ def introduce_polymarket_odds(bookies_odds_fpath):
             # Get market info
             if cond_id is not None:
                 market_info = get_order_book_info(cond_id)
-                #print("market_found")
             else:
-                print(cond_id)
-                print(market_slug)
-                print()
+                print("Market not found")
                 continue
 
+            # For redundancy
+            if not market_info["Order Book"]:
+                continue
 
-            #print(market_slug)
-            #print(market_info)
-            #print()
+            # Get the equiavlent odds of the outcome
+            ask_price = market_info["Yes Best Ask"]
+            if ask_price == "N/A":
+                continue
+            eff_odd = 1 / float(ask_price)
+
+            # Update the best odds if necessary
+            if match[outcome]["best_odds"] < eff_odd:
+                bookmakers_odds[i][outcome]["best_odds"] = eff_odd
+                bookmakers_odds[i][outcome]["bookies_providing"] = "polymarket"
+            elif match[outcome]["best_odds"] == eff_odd:
+                bookmakers_odds[i][outcome]["bookies_providing"].append("polymarket")
+
+            # Get the equivalent odds for the converse
+            ask_price = market_info["No Best Ask"]
+            if ask_price == "N/A":
+                bookmakers_odds[i][outcome]["converse_outcome_odds"] = "N/A"
+            else:
+                bookmakers_odds[i][outcome]["converse_outcome_odds"] = 1 / float(ask_price)
+
+            # Add to record of polymarket odds
+            polymarket_match_odds[outcome] = {"Yes": eff_odd, "No": "-" if ask_price=="N/A" else 1/float(ask_price)}
+
+
+        polymarket_odds.append(polymarket_match_odds)
+
+    # Save the updated file
+    with open(updated_file_fpath, "w") as f:
+        json.dump(bookmakers_odds,f,indent=4)
+
+    # Save the Polymarket odds
+    with open("Data/full_polymarket_odds.json","w") as f:
+        json.dump(polymarket_odds, f, indent=4)
+
+    # Save the last update time
+    try:
+        with open("Data/update_times.json","r") as f:
+            update_times = json.load(f)
+    except:
+        update_times = {}
+    update_times["Polymarket"] = time.strftime('%H:%M:%S')
+    with open("Data/update_times.json","w") as f:
+        json.dump(update_times, f, indent=4)
+
+    
+
+
+
+           
+           
 
     
 

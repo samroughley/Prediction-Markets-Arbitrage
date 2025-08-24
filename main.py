@@ -22,6 +22,14 @@ if update_bookie_odds:
 
 
 
-#check_for_arbitrage(bookies_odds_fpath="Data/bookies_odds.json")
+check_for_arbitrage(bookies_odds_fpath="Data/bookies_odds.json",
+                    save_file_fpath="Data/analysed_odds.json")
+
+
     
-introduce_polymarket_odds(bookies_odds_fpath="Data/bookies_odds.json")
+introduce_polymarket_odds(bookies_odds_fpath="Data/bookies_odds.json",
+                          updated_file_fpath="Data/bookies_odds_with_polymarket.json")
+
+check_for_arbitrage(bookies_odds_fpath="Data/bookies_odds_with_polymarket.json",
+                    save_file_fpath="Data/analysed_odds_with_polymarket.json",
+                    consider_converse_outcomes=True)

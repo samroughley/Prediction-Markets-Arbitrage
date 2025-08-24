@@ -10,7 +10,7 @@ import json
 
 
 
-def check_for_arbitrage(bookies_odds_fpath):
+def check_for_arbitrage(bookies_odds_fpath, save_file_fpath,consider_converse_outcomes=False):
     """
     Check for arbitrage within the odds providied by the bookies.
 
@@ -29,6 +29,9 @@ def check_for_arbitrage(bookies_odds_fpath):
 
     This can be derived by considering how the maximum guaranteed return
     comes when every outcome will return the same.
+
+    consider_converse_outcomes refers to considering the binary scenario
+    provided by the ability to bet on an outcome not happening on Polymarket.
     """
 
     # Load the odds
@@ -88,7 +91,7 @@ def check_for_arbitrage(bookies_odds_fpath):
     formatted_results = format_data(bookies_odds)
 
     # Save the analysed results
-    with open("Data/analysed_odds.json", "w") as f:
+    with open(save_file_fpath, "w") as f:
         json.dump(formatted_results, f, indent=4)
 
 
@@ -101,6 +104,7 @@ def format_data(analysed_data):
 
     # Initialise the correctly formatted dict
     formatted_results = {
+        "Date": [],
         "Home Team": [],
         "Away Team": [],
         "Home Win": [],
@@ -115,6 +119,9 @@ def format_data(analysed_data):
 
     # Add the results into the above dict
     for match in analysed_data:
+
+        # Add the date
+        formatted_results["Date"].append(match["commence_date"])
 
         # Odds information
         formatted_results["Home Team"].append(match["home_team"]["team_name"])

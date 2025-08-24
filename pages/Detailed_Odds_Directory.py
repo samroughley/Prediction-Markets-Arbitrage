@@ -34,6 +34,9 @@ else:
     else:
         using_dark_mode = False
 
+with open("Data/update_times.json", "r") as f:
+    update_times = json.load(f)
+
 # Format the sidebar
 with st.sidebar:
     st.markdown("`Created by:`")
@@ -46,7 +49,9 @@ with st.sidebar:
         st.markdown(f'<a href="{github_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Sam Roughley`</a>', unsafe_allow_html=True)
 
     # Specify when the site was last updated
-    st.markdown(f"*Last updated: {time.strftime('%H:%M:%S')}*")
+    st.write(f"""*Site last updated: {time.strftime('%H:%M:%S')}*    
+             *Polymarket last update: {update_times['Polymarket']}*    
+             *Bookmakers last update: {update_times['Bookmakers']}*""")
 
 
 # Load the data
@@ -54,8 +59,11 @@ with st.sidebar:
 with open("Data/full_bookies_odds.json","r") as f:
     full_data = json.load(f)
 
+with open("data/full_polymarket_odds.json","r") as f:
+    full_polymarket_data = json.load(f)
+
 # Go through each match
-for match in full_data:
+for match, polymarket_odds in zip(full_data, full_polymarket_data):
     
     # Get match info
     home_team = match["home_team"]
@@ -88,3 +96,25 @@ for match in full_data:
     # Highlight max value in each row
     styled_df = all_odds_df.style.highlight_max(axis=1, color="lightgreen")  
     st.table(styled_df)
+
+
+    # Add the Polymarket odds
+    st.markdown("**Polymarket Odds**")
+    if polymarket_odds == {}:
+        st.markdown("*Polymarket data not found*")
+    else:
+        polymarket_odds = {
+            "Market": ["Yes", "No"],
+            home_team: [polymarket_odds["home_team"]["Yes"],
+                        polymarket_odds["home_team"]["No"]],
+            "Draw": [polymarket_odds["draw"]["Yes"],
+                     polymarket_odds["draw"]["No"]],
+            away_team: [polymarket_odds["away_team"]["Yes"],
+                        polymarket_odds["away_team"]["No"]]
+        }
+
+        # Show table of results
+        polymarket_df = pd.DataFrame(polymarket_odds)
+        polymarket_df = polymarket_df.set_index("Market")
+        polymarket_df = polymarket_df.T
+        st.table(polymarket_df)
