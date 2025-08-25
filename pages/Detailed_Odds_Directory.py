@@ -59,7 +59,7 @@ with st.sidebar:
 with open("Data/full_bookies_odds.json","r") as f:
     full_data = json.load(f)
 
-with open("data/full_polymarket_odds.json","r") as f:
+with open("Data/full_polymarket_odds.json","r") as f:
     full_polymarket_data = json.load(f)
 
 # Go through each match
