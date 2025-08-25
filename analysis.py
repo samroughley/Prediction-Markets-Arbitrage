@@ -95,6 +95,54 @@ def check_for_arbitrage(bookies_odds_fpath, save_file_fpath,consider_converse_ou
         json.dump(formatted_results, f, indent=4)
 
 
+    if consider_converse_outcomes:
+        """
+        Check for arbitrage opportunities taking advantage of betting against
+        a particular event on the prediction markets.
+        """
+        
+        # Go through each match
+        for i, match in enumerate(bookies_odds):
+
+            # Consider each possible outcome
+            for outcome in ["home_team","draw","away_team"]:
+
+                # Check converse odds are provided
+                if "converse_outcome_odds" not in match[outcome]:
+                    continue
+
+                # Get the odds
+                yes_odds = match[outcome]["best_odds"]
+                no_odds = match[outcome]["converse_outcome_odds"]
+
+                # Check for arbitrage
+                if (1/yes_odds + 1/no_odds) < 1:
+                    # Arbitrage is possible
+
+                    # Calculate the bet ratio
+                    yes_bet = no_odds / (yes_odds + no_odds)
+                    no_bet = yes_odds / (yes_odds + no_odds)
+
+                    # Calculate the guaranteed return
+                    A = (1/yes_odds + 1/no_odds)
+                    guaranteed_return_perc = (1-A)/A * 100
+
+                    bookies_odds[i][outcome]["2_bet_arb"] = {"Yes_bet_size": yes_bet,
+                                                            "No_bet_size": no_bet,
+                                                            "Percentage_return": guaranteed_return_perc} 
+                else:
+                    bookies_odds[i][outcome]["2_bet_arb"] = None
+
+        
+        # Format the data in a convenient manner
+        bookies_odds = format_for_2_bet_arb(bookies_odds)
+
+        # Save the data
+        with open("Data/two_bet_arbitrage.json","w") as f:
+            json.dump(bookies_odds, f, indent=4)
+                     
+
+
 def format_data(analysed_data):
     """
     Takes the data post-processing from the check_for_arbitrage() function
@@ -146,3 +194,66 @@ def format_data(analysed_data):
 
 
     return formatted_results
+
+
+def format_for_2_bet_arb(bookmakers_odds):
+    """
+    Formats the data in a convenient manner for monitoring two-bet
+    arbitrage.
+    """
+
+    formatted_results = []
+
+    for match in bookmakers_odds:
+
+        # Get team info
+        home_team = match["home_team"]["team_name"]
+        away_team = match["away_team"]["team_name"]
+        
+        # Begin match dict
+        match_dict = {"Match Name": f"{home_team} vs {away_team}"}
+
+        # Initialise the dataframe
+        results_dict = {
+            "Team": [],
+            "Yes Odds": [],
+            "No Odds": [],
+            "Yes Stake": [],
+            "No Stake": [],
+            "Return": []
+        }
+
+        for outcome, name in zip(["home_team","draw","away_team"],[home_team,"Draw",away_team]):
+
+            results_dict["Team"].append(name)
+            results_dict["Yes Odds"].append(match[outcome]["best_odds"])
+            if "converse_outcome_odds" in match[outcome]:
+                results_dict["No Odds"].append(match[outcome]["converse_outcome_odds"])
+
+                if match[outcome]["2_bet_arb"] is not None:
+                    results_dict["Yes Stake"].append(f"{match[outcome]['2_bet_arb']['Yes_bet_size']:.3f}")
+                    results_dict["No Stake"].append(f"{match[outcome]['2_bet_arb']['No_bet_size']:.3f}")
+                    results_dict["Return"].append(f"{match[outcome]['2_bet_arb']['Percentage_return']:.3f} %")
+
+                else:
+                    results_dict["Yes Stake"].append("-")
+                    results_dict["No Stake"].append("-")
+                    results_dict["Return"].append("-")
+
+            else:
+                results_dict["No Odds"].append("-")
+                results_dict["Yes Stake"].append("-")
+                results_dict["No Stake"].append("-")
+                results_dict["Return"].append("-")
+
+        # Add to the match dict
+        match_dict["Arbitrage Table"] = results_dict
+
+        # Append to results
+        formatted_results.append(match_dict)
+    
+    return formatted_results
+
+
+
+    

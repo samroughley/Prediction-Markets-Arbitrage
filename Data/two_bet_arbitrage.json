@@ -1,0 +1,737 @@
+[
+    {
+        "Match Name": "Newcastle United vs Liverpool",
+        "Arbitrage Table": {
+            "Team": [
+                "Newcastle United",
+                "Draw",
+                "Liverpool"
+            ],
+            "Yes Odds": [
+                3.25,
+                3.9,
+                2.26
+            ],
+            "No Odds": [
+                1.4084507042253522,
+                1.3333333333333333,
+                1.8181818181818181
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "0.446"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "0.554"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "0.758 %"
+            ]
+        }
+    },
+    {
+        "Match Name": "Chelsea vs Fulham",
+        "Arbitrage Table": {
+            "Team": [
+                "Chelsea",
+                "Draw",
+                "Fulham"
+            ],
+            "Yes Odds": [
+                1.56,
+                4.7,
+                6.6
+            ],
+            "No Odds": [
+                2.7777777777777777,
+                1.25,
+                1.1494252873563218
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Tottenham Hotspur vs Bournemouth",
+        "Arbitrage Table": {
+            "Team": [
+                "Tottenham Hotspur",
+                "Draw",
+                "Bournemouth"
+            ],
+            "Yes Odds": [
+                1.85,
+                4.4,
+                4.8
+            ],
+            "No Odds": [
+                2.380952380952381,
+                1.2658227848101264,
+                1.25
+            ],
+            "Yes Stake": [
+                "0.563",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "0.437",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "4.108 %",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Sunderland vs Brentford",
+        "Arbitrage Table": {
+            "Team": [
+                "Sunderland",
+                "Draw",
+                "Brentford"
+            ],
+            "Yes Odds": [
+                2.9,
+                3.45,
+                2.7
+            ],
+            "No Odds": [
+                1.4705882352941175,
+                1.36986301369863,
+                1.5625
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Manchester United vs Burnley",
+        "Arbitrage Table": {
+            "Team": [
+                "Manchester United",
+                "Draw",
+                "Burnley"
+            ],
+            "Yes Odds": [
+                1.37,
+                5.88235294117647,
+                10.5
+            ],
+            "No Odds": [
+                3.571428571428571,
+                1.1904761904761905,
+                1.0989010989010988
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Wolverhampton Wanderers vs Everton",
+        "Arbitrage Table": {
+            "Team": [
+                "Wolverhampton Wanderers",
+                "Draw",
+                "Everton"
+            ],
+            "Yes Odds": [
+                2.64,
+                3.35,
+                2.941176470588235
+            ],
+            "No Odds": [
+                1.5384615384615383,
+                1.4084507042253522,
+                1.4492753623188408
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Leeds United vs Newcastle United",
+        "Arbitrage Table": {
+            "Team": [
+                "Leeds United",
+                "Draw",
+                "Newcastle United"
+            ],
+            "Yes Odds": [
+                4.1,
+                3.846153846153846,
+                2.02
+            ],
+            "No Odds": [
+                1.3513513513513513,
+                1.2987012987012987,
+                1.923076923076923
+            ],
+            "Yes Stake": [
+                "0.248",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "0.752",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "1.636 %",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Brighton and Hove Albion vs Manchester City",
+        "Arbitrage Table": {
+            "Team": [
+                "Brighton and Hove Albion",
+                "Draw",
+                "Manchester City"
+            ],
+            "Yes Odds": [
+                4.5,
+                4.2,
+                1.86
+            ],
+            "No Odds": [
+                1.25,
+                1.282051282051282,
+                2.127659574468085
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Nottingham Forest vs West Ham United",
+        "Arbitrage Table": {
+            "Team": [
+                "Nottingham Forest",
+                "Draw",
+                "West Ham United"
+            ],
+            "Yes Odds": [
+                1.85,
+                4.0,
+                5.4
+            ],
+            "No Odds": [
+                2.380952380952381,
+                1.282051282051282,
+                1.2195121951219512
+            ],
+            "Yes Stake": [
+                "0.563",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "0.437",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "4.108 %",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Liverpool vs Arsenal",
+        "Arbitrage Table": {
+            "Team": [
+                "Liverpool",
+                "Draw",
+                "Arsenal"
+            ],
+            "Yes Odds": [
+                2.0833333333333335,
+                3.65,
+                3.7037037037037033
+            ],
+            "No Odds": [
+                1.8867924528301885,
+                1.3333333333333333,
+                1.3333333333333333
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Aston Villa vs Crystal Palace",
+        "Arbitrage Table": {
+            "Team": [
+                "Aston Villa",
+                "Draw",
+                "Crystal Palace"
+            ],
+            "Yes Odds": [
+                1.95,
+                3.8,
+                4.6
+            ],
+            "No Odds": [
+                2.0833333333333335,
+                1.3157894736842106,
+                1.282051282051282
+            ],
+            "Yes Stake": [
+                "0.517",
+                "-",
+                "0.218"
+            ],
+            "No Stake": [
+                "0.483",
+                "-",
+                "0.782"
+            ],
+            "Return": [
+                "0.723 %",
+                "-",
+                "0.262 %"
+            ]
+        }
+    },
+    {
+        "Match Name": "Arsenal vs Nottingham Forest",
+        "Arbitrage Table": {
+            "Team": [
+                "Arsenal",
+                "Draw",
+                "Nottingham Forest"
+            ],
+            "Yes Odds": [
+                1.4,
+                4.75,
+                7.5
+            ],
+            "No Odds": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Everton vs Aston Villa",
+        "Arbitrage Table": {
+            "Team": [
+                "Everton",
+                "Draw",
+                "Aston Villa"
+            ],
+            "Yes Odds": [
+                3.0,
+                3.3,
+                2.42
+            ],
+            "No Odds": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Bournemouth vs Brighton and Hove Albion",
+        "Arbitrage Table": {
+            "Team": [
+                "Bournemouth",
+                "Draw",
+                "Brighton and Hove Albion"
+            ],
+            "Yes Odds": [
+                2.4,
+                3.55,
+                2.8
+            ],
+            "No Odds": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Crystal Palace vs Sunderland",
+        "Arbitrage Table": {
+            "Team": [
+                "Crystal Palace",
+                "Draw",
+                "Sunderland"
+            ],
+            "Yes Odds": [
+                1.73,
+                3.75,
+                5.0
+            ],
+            "No Odds": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Fulham vs Leeds United",
+        "Arbitrage Table": {
+            "Team": [
+                "Fulham",
+                "Draw",
+                "Leeds United"
+            ],
+            "Yes Odds": [
+                1.86,
+                3.8,
+                4.0
+            ],
+            "No Odds": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Newcastle United vs Wolverhampton Wanderers",
+        "Arbitrage Table": {
+            "Team": [
+                "Newcastle United",
+                "Draw",
+                "Wolverhampton Wanderers"
+            ],
+            "Yes Odds": [
+                1.45,
+                4.5,
+                7.0
+            ],
+            "No Odds": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "West Ham United vs Tottenham Hotspur",
+        "Arbitrage Table": {
+            "Team": [
+                "West Ham United",
+                "Draw",
+                "Tottenham Hotspur"
+            ],
+            "Yes Odds": [
+                4.0,
+                3.7,
+                1.91
+            ],
+            "No Odds": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Brentford vs Chelsea",
+        "Arbitrage Table": {
+            "Team": [
+                "Brentford",
+                "Draw",
+                "Chelsea"
+            ],
+            "Yes Odds": [
+                4.6,
+                3.85,
+                1.73
+            ],
+            "No Odds": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Burnley vs Liverpool",
+        "Arbitrage Table": {
+            "Team": [
+                "Burnley",
+                "Draw",
+                "Liverpool"
+            ],
+            "Yes Odds": [
+                10.0,
+                5.3,
+                1.33
+            ],
+            "No Odds": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    },
+    {
+        "Match Name": "Manchester City vs Manchester United",
+        "Arbitrage Table": {
+            "Team": [
+                "Manchester City",
+                "Draw",
+                "Manchester United"
+            ],
+            "Yes Odds": [
+                1.77,
+                3.9,
+                4.2
+            ],
+            "No Odds": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Yes Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "No Stake": [
+                "-",
+                "-",
+                "-"
+            ],
+            "Return": [
+                "-",
+                "-",
+                "-"
+            ]
+        }
+    }
+]

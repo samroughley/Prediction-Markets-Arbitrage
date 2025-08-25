@@ -189,17 +189,17 @@ def introduce_polymarket_odds(bookies_odds_fpath, updated_file_fpath):
         bookmakers_odds = json.load(f)
 
     # Get all the currently available Polymarket markets
-    # markets_list = fetch_all_markets()
+    markets_list = fetch_all_markets()
         
     # Save it for now
-    import pickle
+    # import pickle
     # with open("testing_scripts/markets_list.pkl","wb") as f:
     #     pickle.dump(markets_list, f)
-    with open("testing_scripts/markets_list.pkl", "rb") as f:
-        markets_list = pickle.load(f)
-        print()
-        print("Currently using archived markets list!!")
-        print()
+    # with open("testing_scripts/markets_list.pkl", "rb") as f:
+    #     markets_list = pickle.load(f)
+    #     print()
+    #     print("Currently using archived markets list!!")
+    #     print()
 
     # Initialise a record of all Polymarket odds
     polymarket_odds = []

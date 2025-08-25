@@ -30,6 +30,8 @@ with open("Data/analysed_odds_with_polymarket.json", "r") as f:
     loaded_data_with_polymarket = json.load(f)
 with open("Data/update_times.json","r") as f:
     update_times = json.load(f)
+with open("Data/two_bet_arbitrage.json","r") as f:
+    two_bet_arb = json.load(f)
 
 # Refresh every 5 seconds
 st_autorefresh(interval=5000, key='dashboard_refresh')
@@ -104,12 +106,45 @@ with st.expander("ℹ️ Column details"):
     """)
 
 
-# Include table for two-bet arbitrage
+## Include table for two-bet arbitrage ##
 st.markdown("### Two-Bet Arbitrage")
 st.markdown("""Polymarket, along with other prediction markets, enables bets
             to be placed on an event not happening. This enables potential
             arbitrage opportunities that involve only two bets. Such
             opportunities are monitored below.""")
+
+# Begin 2 columns
+col1, col2 = st.columns(2)
+
+for i, match in enumerate(two_bet_arb):
+
+    if i%2 == 0:
+        with col1:
+
+            # Write match name
+            st.markdown(f"**{match['Match Name']}**")
+
+            # Include table
+            st.dataframe(pd.DataFrame(match["Arbitrage Table"]), hide_index=True)
+        
+    else:
+        with col2:
+            # Write match name
+            st.markdown(f"**{match['Match Name']}**")
+
+            # Include table
+            st.dataframe(pd.DataFrame(match["Arbitrage Table"]), hide_index=True)
+
+# Provide descriptions of the columns
+with st.expander("ℹ️ Column details"):
+    st.markdown("""
+    - **Team:** Relevant outcome of the match.
+    - **Yes Odds:** Decimal odds for corresponding outcome occuring.
+    - **No Odds:** Decimal odds for corresponding outcome not occuring.
+    - **Yes Stake:** Fraction of stake that should be placed on corresponding outcome for arbitrage.
+    - **No Stake:** Fraction of stake that should be placed against corresponding outcome for arbitrage.
+    - **Return:** Maximum guaranteed percentage return from arbitrage.
+    """)
 
 # Provide a disclaimer about update frequency
 st.markdown("""*Note: Due to rate limits, the bookmakers' odds are not continually updated.
