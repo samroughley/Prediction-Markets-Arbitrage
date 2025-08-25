@@ -14,4 +14,7 @@ I may then extend the project to include analysing the prices for trading opport
 - [ ] Track the performance of the implemented strategies
 
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://prediction-markets-arbitrage.streamlit.app)
+
+
 
