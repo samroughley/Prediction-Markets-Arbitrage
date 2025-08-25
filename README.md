@@ -16,5 +16,6 @@ I may then extend the project to include analysing the prices for trading opport
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://prediction-markets-arbitrage.streamlit.app)
 
+View the example [Streamlit dashboard](https://prediction-markets-arbitrage.streamlit.app) (may take a few minutes to load). The dashboard does not contain the latest odds, since the backend is not continually updated, however illustrates the data that is available.
 
 
