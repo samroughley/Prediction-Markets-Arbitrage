@@ -1,30 +1,114 @@
-# Prediction-Markets-Arbitrage
+# ⚽ Sports Arbitrage Dashboard (Premier League + Polymarket)
 
 <div align="center">
-
-<!-- [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://prediction-markets-arbitrage.streamlit.app) -->
 
 <a href="https://prediction-markets-arbitrage.streamlit.app">
   <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" 
        alt="Streamlit App" 
-       width="250"/>
+       width="200"/>
 </a>
 
 </div>
 
-The initial aim of this project was to analyse prediction markets for arbitrage opportunities, with the intention of comparing prices on Polymarket and Kalshi. However, upon setting up accounts, I discovered that Kalshi currently can't be accessed unless you are from the US. Therefore, I can't access the Kalshi API to get the latest prices.
+---
 
-Therefore, currently this project consists only of a price tracker for markets on Polymarket. I will create a Streamlit dashboard to monitor prices.
+## 📖 Project Overview
 
-I may then extend the project to include analysing the prices for trading opportunities, where I believe the contracts are over or under-priced. Since Polymarket is also restricted in the UK - that being I can access the prices but can't place trades - no actual trading will be performed, however the performance of the strategies can still be monitored.
+This dashboard monitors **arbitrage opportunities** between **traditional bookmakers**, as well as **Polymarket**, for upcoming Premier League matches.  
+It highlights when discrepancies in odds make it possible to lock in a profit, and visualizes these opportunities in real time.
 
-### To-Do:
+👉 [**Live Dashboard**](https://prediction-markets-arbitrage.streamlit.app)
 
-- [x] Connect to the Polymarket API
-- [ ] Create a simple dashboard that monitors (particular) markets
-- [ ] Research possible trading strategies 
-- [ ] Track the performance of the implemented strategies
+---
 
-View the example [Streamlit dashboard](https://prediction-markets-arbitrage.streamlit.app) (may take a few minutes to load). The dashboard does not contain the latest odds, since the backend is not continually updated, however illustrates the data that is available.
+## 📸 Demo
 
+*(Insert a screenshot or animated GIF of your dashboard here — highly recommended!)*  
+
+---
+
+## ✨ Features
+
+- ✅ Fetches odds from multiple bookmakers + Polymarket  
+- ✅ Detects arbitrage opportunities across outcomes (win/lose/draw)   
+- ✅ Interactive dashboard with filtering
+- ✅ Auto-refresh for real-time monitoring  
+
+---
+
+## 🛠 Tech Stack
+
+- **Python 3.10+**  
+- **Streamlit** – frontend & dashboard  
+- **Requests / Polymarket API** – live data fetching  
+- **Pandas / NumPy** – data analysis and manipulation  
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository and install dependencies:
+
+```bash
+# Clone the repo
+git clone https://github.com/samroughley/Prediction-Markets-Arbitrage.git
+cd Prediction-Markets-Arbitrage
+
+# (Optional) Create a virtual environment
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app locally
+streamlit run Home.py
+```
+
+---
+
+## 🏗 Architecture & Workflow
+
+This project consists of two main components:
+
+1. **Data Processing Script (`main.py`)**
+   - Handles all API calls to bookmakers and Polymarket.
+   - Performs the data processing, including calculating arbitrage opportunities.
+   - Designed to run continuously for real-time updates.
+   - **Note:** To see live updates in the dashboard, this script must be running in the background.
+
+2. **Streamlit Dashboard (`Home.py`)**
+   - Visualizes the arbitrage opportunities calculated by `main.py`.
+   - Can be run independently to explore static or previously saved data.
+   - For live updates, ensure `main.py` is running in parallel, either locally or on a server.
+
+**Deployment Note:** The current deployment on Streamlit Community Cloud does **not** run `main.py` continuously. Therefore, the dashboard will display the most recent processed data rather than real-time updates.
+
+---
+
+## 📖 Usage
+
+*Something about usage...*
+
+---
+
+## 🎯 Motivation
+
+*Something about motivation...*
+
+---
+
+## 📌 Future Improvements
+
+*Something about future improvements*
+
+- [x] To do
+- [ ] To do
+- [ ] To do
+
+---
+
+## 📜 License and References
+
+*Something about license and references...* 
 

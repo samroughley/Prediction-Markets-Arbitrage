@@ -9,3 +9,6 @@ testing_scripts/
 
 # Ignore the constants file
 constants.py
+
+# Ignore archived files
+Archived_files/

@@ -8,9 +8,9 @@ Controls all the necessary backend functions, including:
 # Import necessary packages
 import json
 
-from bookie_functions import update_odds, request_odds_api, process_odds
-from analysis import check_for_arbitrage
-from polymarket_functions import fetch_all_markets, introduce_polymarket_odds
+from utils.bookie_functions import update_odds, request_odds_api, process_odds
+from utils.analysis import check_for_arbitrage
+from utils.polymarket_functions import fetch_all_markets, introduce_polymarket_odds
 
 
 
