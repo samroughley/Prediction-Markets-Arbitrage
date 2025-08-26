@@ -12,3 +12,6 @@ constants.py
 
 # Ignore archived files
 Archived_files/
+
+# Ignore pdf files
+assets/*.pdf

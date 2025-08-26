@@ -23,7 +23,7 @@ It highlights when discrepancies in odds make it possible to lock in a profit, a
 
 ## 📸 Demo
 
-*(Insert a screenshot or animated GIF of your dashboard here — highly recommended!)*  
+![Dashboard Screenshot](assets/dashboard.png)
 
 ---
 
@@ -102,13 +102,11 @@ This project consists of two main components:
 
 *Something about future improvements*
 
-- [x] To do
-- [ ] To do
-- [ ] To do
-
 ---
 
 ## 📜 License and References
 
-*Something about license and references...* 
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+*Something about references...* 
 
