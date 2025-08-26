@@ -9,6 +9,7 @@ import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 from streamlit_theme import st_theme
 import time
+from datetime import datetime
 import pandas as pd
 
 
@@ -64,8 +65,8 @@ with st.sidebar:
 
     # Specify when the site was last updated
     st.write(f"""*Site last updated: {time.strftime('%H:%M:%S')}*    
-             *Polymarket last update: {update_times['Polymarket']}*    
-             *Bookmakers last update: {update_times['Bookmakers']}*""")
+             *Polymarket last update: {datetime.fromisoformat(update_times['Polymarket']).strftime("%Y-%m-%d %H:%M:%S %Z")}*    
+             *Bookmakers last update: {datetime.fromisoformat(update_times['Bookmakers']).strftime("%Y-%m-%d %H:%M:%S %Z")}*""")
 
 # Set the page title
 st.title("Arbitrage Tracker")

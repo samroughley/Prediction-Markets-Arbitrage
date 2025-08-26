@@ -10,6 +10,7 @@ from constants import POLYMARKET_API_KEY
 import json
 import re
 import time
+from datetime import datetime
 
 
 def fetch_all_markets():
@@ -280,7 +281,8 @@ def introduce_polymarket_odds(bookies_odds_fpath, updated_file_fpath):
             update_times = json.load(f)
     except:
         update_times = {}
-    update_times["Polymarket"] = time.strftime('%H:%M:%S')
+    # update_times["Polymarket"] = time.strftime('%H:%M:%S')
+    update_times["Polymarket"] = datetime.now().astimezone().isoformat()
     with open("Data/update_times.json","w") as f:
         json.dump(update_times, f, indent=4)
 

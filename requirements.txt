@@ -5,3 +5,4 @@ streamlit_autorefresh
 watchdog
 py-clob-client
 st-theme
+tzlocal

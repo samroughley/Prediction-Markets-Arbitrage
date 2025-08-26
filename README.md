@@ -98,15 +98,30 @@ This project consists of two main components:
 
 ---
 
-## 📌 Future Improvements
+## 📌 Future Improvements (and personal TO-DO list)
 
-*Something about future improvements*
-
+- [ ] Vary update frequency of bookmakers' odds based upon time until matches
+- [ ] Drop historical matches without requiring API call
+- [ ] Improve efficiency by storing upcoming match information, reducing Polymarket API calls (currently ~1 minute between updates)
+- [ ] Incorporate other sports / competitions
+- [ ] Introduce match / competition filtering on the dashboard
+- [ ] Track past arbitrage opportunities
+- [ ] Improve code readability
+- [ ] Create document outlining underlying maths
+- [ ] Create gif for README
+- [ ] Create more detailed project overview
+- [ ] Remove print statements from functions in main.py
+ 
 ---
 
 ## 📜 License and References
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
-*Something about references...* 
+---
 
+## 🔗 References
+
+- Polymarket API - https://docs.polymarket.com/quickstart/introduction/main
+- Premier League Odds API - https://the-odds-api.com
+- Streamlit - https://streamlit.io

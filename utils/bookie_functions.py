@@ -9,6 +9,7 @@ import requests
 import json
 from constants import ODDS_API_KEY
 import time
+from datetime import datetime
 
 
 
@@ -30,7 +31,8 @@ def request_odds_api():
             update_times = json.load(f)
     except:
         update_times = {}
-    update_times["Bookmakers"] = time.strftime('%H:%M:%S')
+    # update_times["Bookmakers"] = time.strftime('%H:%M:%S')
+    update_times["Bookmakers"] = datetime.now().astimezone().isoformat()
     with open("Data/update_times.json","w") as f:
         json.dump(update_times, f, indent=4)
 
