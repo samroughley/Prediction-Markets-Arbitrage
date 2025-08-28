@@ -88,13 +88,22 @@ This project consists of two main components:
 
 ## 📖 Usage
 
-*Something about usage...*
+*To be completed...*
 
 ---
 
 ## 🎯 Motivation
 
-*Something about motivation...*
+This project was created to explore the intersection of sports betting markets and prediction markets such as Polymarket. I wanted to investigate whether arbitrage opportunities exist across traditional bookmakers and decentralized markets, and to build a tool that can surface these opportunities in real time.  
+
+On a personal level, the project was also an opportunity to practice:
+- Working with multiple APIs
+- Designing a real-time data pipeline
+- Building an interactive dashboard with Streamlit
+- Applying concepts from finance and probability to sports analytics
+
+Ultimately, this project serves both as a learning experience and as a demonstration of my skills in data engineering, visualization, and quantitative thinking.
+
 
 ---
 
@@ -106,6 +115,7 @@ This project consists of two main components:
 - [ ] Incorporate other sports / competitions
 - [ ] Introduce match / competition filtering on the dashboard
 - [ ] Track past arbitrage opportunities
+- [ ] Automatic odds updates on the Streamlit dashboard
 - [ ] Improve code readability
 - [ ] Create document outlining underlying maths
 - [ ] Create gif for README
@@ -114,7 +124,7 @@ This project consists of two main components:
  
 ---
 
-## 📜 License and References
+## 📜 License
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
