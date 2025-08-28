@@ -47,7 +47,7 @@ It highlights when discrepancies in odds make it possible to lock in a profit, a
 
 ## 🚀 Getting Started
 
-Clone the repository and install dependencies:
+To run the application locally, clone the repository and install dependencies:
 
 ```bash
 # Clone the repo
