@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<a href="https://prediction-markets-arbitrage.streamlit.app">
+<a href="https://prediction-markets-arbitrage.streamlit.app" target="_blank">
   <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" 
        alt="Streamlit App" 
        width="200"/>
@@ -15,9 +15,9 @@
 ## 📖 Project Overview
 
 This dashboard monitors **arbitrage opportunities** between **traditional bookmakers**, as well as **Polymarket**, for upcoming Premier League matches.  
-It highlights when discrepancies in odds make it possible to lock in a profit, and visualizes these opportunities in real time.
+It highlights when discrepancies in odds make it possible to lock in a profit, with the capability to visualise these opportunities in real time.
 
-👉 [**Live Dashboard**](https://prediction-markets-arbitrage.streamlit.app)
+👉 <a href="https://prediction-markets-arbitrage.streamlit.app" target="_blank">**Live Dashboard**</a>
 
 ---
 
@@ -31,17 +31,16 @@ It highlights when discrepancies in odds make it possible to lock in a profit, a
 
 - ✅ Fetches odds from multiple bookmakers + Polymarket  
 - ✅ Detects arbitrage opportunities across outcomes (win/lose/draw)   
-- ✅ Interactive dashboard with filtering
+- ✅ Interactive dashboard
 - ✅ Auto-refresh for real-time monitoring  
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Python 3.10+**  
+- **Python 3.11+**  
 - **Streamlit** – frontend & dashboard  
-- **Requests / Polymarket API** – live data fetching  
-- **Pandas / NumPy** – data analysis and manipulation  
+- **Requests / Polymarket API** – live data fetching   
 
 ---
 
@@ -61,9 +60,20 @@ source venv/bin/activate   # On Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 
+# (Optional, but required for full capabilities) For real-time monitoring
+# In parallel
+python main.py
+
 # Run the app locally
 streamlit run Home.py
 ```
+
+<details>
+<summary>Additional Parameters:</summary>
+
+- **Bookmakers' Update Frequency** - To stay within rate limits, `bookmakers_update_period` in `main.py` defines the minimum time period between calls to the API. Can be changed depending upon personal rate limit / account type.
+
+</details>
 
 ---
 
@@ -79,16 +89,24 @@ This project consists of two main components:
 
 2. **Streamlit Dashboard (`Home.py`)**
    - Visualizes the arbitrage opportunities calculated by `main.py`.
-   - Can be run independently to explore static or previously saved data.
-   - For live updates, ensure `main.py` is running in parallel, either locally or on a server.
+   - Can be run independently to explore static / previously saved data.
+   - For live updates, ensure `main.py` is running in parallel.
 
-**Deployment Note:** The current deployment on Streamlit Community Cloud does **not** run `main.py` continuously. Therefore, the dashboard will display the most recent processed data rather than real-time updates.
+**Deployment Note:** The current deployment on Streamlit Community Cloud does **not** run `main.py`. Therefore, the dashboard will display the most recent processed data rather than real-time updates.
 
 ---
 
 ## 📖 Usage
 
-*To be completed...*
+Dashboard consists of two pages:
+
+1. **Home**
+   - Summarises the best odds available for every outcome (win/lose/draw), highlighting if arbitrage is possible and the available return. Can be selected as to whether to include odds from Polymarket.
+   - **Two-Bet Arbitrage**: Searches for arbitrage opportunities made possible through betting on events **not** happening on Polymarket.
+
+2. **Detailed Odds Directory**
+   - Details all the odds available and the relevant source of the odds that were analysed for arbitrage opportunities.
+   - Highlights the best available odds, hence can be used to determine the source of the odds listed on *Home*
 
 ---
 
@@ -116,11 +134,7 @@ Ultimately, this project serves both as a learning experience and as a demonstra
 - [ ] Introduce match / competition filtering on the dashboard
 - [ ] Track past arbitrage opportunities
 - [ ] Automatic odds updates on the Streamlit dashboard
-- [ ] Improve code readability
 - [ ] Create document outlining underlying maths
-- [ ] Create gif for README
-- [ ] Create more detailed project overview
-- [ ] Remove print statements from functions in main.py
  
 ---
 
